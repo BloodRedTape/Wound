@@ -13,6 +13,9 @@ private:
 
 	UPROPERTY(EditAnywhere, Category="Movement")
 	float YawSpeed = 1.0f;	
+
+	UPROPERTY(EditAnywhere, Category="Movement")
+	float YawInput = 0.0f;
 public:
 	AAirplane();
 

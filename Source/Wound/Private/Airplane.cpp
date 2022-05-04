@@ -8,6 +8,12 @@ void AAirplane::Tick(float DeltaTime){
 	Super::Tick(DeltaTime);
 
 	SetActorLocation(GetActorLocation() + GetActorForwardVector() * ForwardSpeed * DeltaTime);
+	
+	float YawAmount = YawInput * YawSpeed * DeltaTime;
+
+	SetActorRotation(GetActorRotation() + FRotator(0.f, YawAmount, 0.f));
+
+	YawInput -= YawAmount;
 }
 
 void AAirplane::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent){
@@ -17,6 +23,6 @@ void AAirplane::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 }
 
 void AAirplane::Yaw(float Amount){
-	SetActorRotation(GetActorRotation() + FRotator(0.0f, Amount * YawSpeed, 0.0f));
+	YawInput += Amount;
 }
 
