@@ -16,8 +16,6 @@ private:
 public:
 	AAirplane();
 
-	void BeginPlay() override;
-
 	void Tick(float DeltaTime) override;
 
 	void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;

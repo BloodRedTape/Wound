@@ -4,10 +4,6 @@ AAirplane::AAirplane(){
 	PrimaryActorTick.bCanEverTick = true;
 }
 
-void AAirplane::BeginPlay(){
-	Super::BeginPlay();
-}
-
 void AAirplane::Tick(float DeltaTime){
 	Super::Tick(DeltaTime);
 
