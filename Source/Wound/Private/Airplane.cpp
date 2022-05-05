@@ -10,8 +10,8 @@ void AAirplane::Tick(float DeltaTime){
 	SetActorLocation(GetActorLocation() + GetActorForwardVector() * ForwardSpeed * DeltaTime);
 	
 	float YawAmount = YawInput * YawSpeed * DeltaTime;
-
-	SetActorRotation(GetActorRotation() + FRotator(0.f, YawAmount, 0.f));
+	
+	SetActorRotation(FRotator(0.f, YawAmount + GetActorRotation().Yaw, YawAmount * 45));
 
 	YawInput -= YawAmount;
 }
